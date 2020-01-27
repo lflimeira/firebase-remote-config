@@ -26,7 +26,7 @@ export default function App() {
   const [showTable, setShowTable] = useState(firebaseRemoteConfig.getValue('showTable').asBoolean())
 
   useEffect(() => {
-    firebaseRemoteConfig.fetch()
+    firebaseRemoteConfig.fetchAndActivate()
     .then(
       () => {
         setShowTable(firebaseRemoteConfig.getValue('showTable').asBoolean())
